@@ -22,9 +22,9 @@ const Hero = () => {
                         <ul className='lg:hidden flex gap-6 relative top-3 text-lg '>
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/Product">Products</Link></li>
-                            <li><Link to="/Rooms">Rooms</Link></li>
+                            <li><Link to="/Room">Rooms</Link></li>
                             <li><Link to="/AboutUs">About Us</Link></li>
-                            <li><Link to="ContactU">Contact Us</Link></li>
+                            <li><Link to="ContactUs">Contact Us</Link></li>
                             <FaCartArrowDown className='text-yellow-300 cursor-pointer h-7 w-7' />
                         </ul>
                         <div>
