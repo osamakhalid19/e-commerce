@@ -24,14 +24,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build project
-        run: npm install && npm run build
+      # Change directory to vite-project to install dependencies and build the project
+      - name: Install dependencies and build project
+        run: |
+          cd vite-project  # Change to the vite-project directory
+          npm install      # Install dependencies
+          npm run build    # Run build (make sure 'build' is defined in package.json)
 
+      # Setup Pages for deployment
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # Upload the build output folder (e.g., dist or build)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'vite-project/dist'  # Adjust path for correct directory
+          path: 'vite-project/dist'  # Adjust this path to where your build output is located
 
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
