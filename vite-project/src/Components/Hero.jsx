@@ -7,8 +7,6 @@ import { IoMdMenu } from "react-icons/io";
 
 const Hero = () => {
     const [active, setactive] = useState(false)
-    const [freeSp, setfreeSp] = useState(false)
-
 
     return (
         <>
@@ -22,15 +20,15 @@ const Hero = () => {
                         <ul className='lg:hidden flex gap-6 relative top-3 text-lg '>
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/Product">Products</Link></li>
-                            <li><Link to="/Room">Rooms</Link></li>
+                            <li><Link to="/Rooms">Rooms</Link></li>
                             <li><Link to="/AboutUs">About Us</Link></li>
                             <li><Link to="ContactUs">Contact Us</Link></li>
                             <FaCartArrowDown className='text-yellow-300 cursor-pointer h-7 w-7' />
                         </ul>
                         <div>
-                            <IoMdMenu className='cursor-pointer absolute top-2 h-8 w-7 hidden lg:inline-block sm:top-1 sm:w-28' onClick={() => { setactive(!active) }} />
+                            <IoMdMenu className=' cursor-pointer absolute top-2 h-8 w-7 hidden lg:inline-block sm:top-1 sm:w-28' onClick={() => { setactive(!active) }} />
 
-                            <div className={`h-full w-[30%] sm:w-[80%] transition-all duration-[1s] bg-gray-600 fixed top-0 left-0 ${active ? 'left-0' : 'left-[-454px]'}`}>
+                            <div className={`h-full w-[30%] sm:w-[70%] z-10 transition-all duration-[0.5s] bg-gray-600 fixed top-0 left-0 ${active ? 'left-0' : 'left-[-100%]'}`}>
 
                                 <ul className='relative block justify-around ml-[30px] py-10 space-y-6 text-[22px]'>
                                     <li><Link to="/">Home</Link></li>
@@ -41,11 +39,8 @@ const Hero = () => {
                                     <FaCartArrowDown className='cursor-pointer h-7 w-7 text-yellow-300' />
                                 </ul>
                             </div>
+                            {active && <div className='h-full w-full backdrop-blur-sm fixed top-0 left-0' onClick={() => setactive(false)}></div>}
                         </div>
-                        {/* <div className='h-full w-[70%] bg-slate-600 z-10 fixed '></div> */}
-
-
-
                     </div>
                 </nav>
             </header>

@@ -1,16 +1,17 @@
-import Hero from './Components/Hero'
+
 import './App.css'
 import {createBrowserRouter,RouterProvider,} from "react-router-dom"
 import Products from './Components/Products.jsx'
 import Rooms from './Components/Rooms.jsx'
 import AboutUs from './Components/AboutUs.jsx'
 import ContactUs from './Components/ContactUs.jsx'
+import Home from './Components/Home.jsx'
 
 function App() {
   const router = createBrowserRouter([
     {
       path:"/",
-      element:<Hero/>
+      element:<Home/>
     },
     {
       path:"/Product",
